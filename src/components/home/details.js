@@ -45,14 +45,15 @@ class Details extends Component {
           <View style={[s.aic]}>
             <Text style={[s.orange, s.b]}>{zbcHeader}</Text>
           </View>
-          <PickerStatus
-            onChangeText={result => this.setState({ status: result })}
-          />
+
           <DashboardStatus
             status={status}
             waiters={waiters.length}
             figure={this.filterNumber(status, waiters)}
             date={date}
+          />
+          <PickerStatus
+            onChangeText={result => this.setState({ status: result })}
           />
         </View>
         <Text style={[s.darkGrey, s.ph4, s.pb3]}>LIST OF CUSTOMERS</Text>

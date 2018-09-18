@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, TouchableOpactiy } from "react-native";
 import { styles as s } from "react-native-style-tachyons";
 
 export function Dashboard({ lists, area, date }) {
@@ -7,17 +7,7 @@ export function Dashboard({ lists, area, date }) {
   return (
     <View style={[s.pv3, s.jcc, s.bg_paleOrange, s.mh3, s.br2, s.mv2]}>
       <Text style={[s.pv2, s.ph4, s.b]}>WAITERS DASHBOARD</Text>
-      <Row
-        caption={"Total Waiters"}
-        figure={
-          area === null
-            ? lists.length
-            : lists.filter(list => list.zbc == area).length
-        }
-        date={moment(date)
-          .tz("Asia/Kuala_Lumpur")
-          .format("LLL")}
-      />
+
       <Row
         caption={"Pending Order"}
         figure={
@@ -52,6 +42,17 @@ export function Dashboard({ lists, area, date }) {
             : lists.filter(
                 list => list.status == "Completed" && list.zbc == area
               ).length
+        }
+        date={moment(date)
+          .tz("Asia/Kuala_Lumpur")
+          .format("LLL")}
+      />
+      <LastRow
+        caption={"Total Waiters"}
+        figure={
+          area === null
+            ? lists.length
+            : lists.filter(list => list.zbc == area).length
         }
         date={moment(date)
           .tz("Asia/Kuala_Lumpur")
@@ -93,6 +94,22 @@ export const Row = ({ caption, figure, date }) => {
       </View>
       <View style={[s.jcc]}>
         <Text style={[s.f5]}>{figure}</Text>
+      </View>
+    </View>
+  );
+};
+
+export const LastRow = ({ caption, figure, date }) => {
+  return (
+    <View
+      style={[s.pt2, s.pb2, s.flx_row, s.jcsb, s.bt, s.mh4, s.b__lightGrey]}
+    >
+      <View>
+        <Text style={[s.f4]}>{caption}</Text>
+        <Text style={[s.white]}>{date}</Text>
+      </View>
+      <View style={[s.jcc]}>
+        <Text style={[s.f4]}>{figure}</Text>
       </View>
     </View>
   );
