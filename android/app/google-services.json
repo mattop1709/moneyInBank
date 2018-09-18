@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "58978207290",
-    "firebase_url": "https://moneyinbank-ab39d.firebaseio.com",
-    "project_id": "moneyinbank-ab39d",
-    "storage_bucket": "moneyinbank-ab39d.appspot.com"
+    "project_number": "814817576908",
+    "firebase_url": "https://moneyinbank-4cfb2.firebaseio.com",
+    "project_id": "moneyinbank-4cfb2",
+    "storage_bucket": "moneyinbank-4cfb2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:58978207290:android:47bca6ce47ef7ae8",
+        "mobilesdk_app_id": "1:814817576908:android:47bca6ce47ef7ae8",
         "android_client_info": {
           "package_name": "com.testproject"
         }
       },
       "oauth_client": [
         {
-          "client_id": "58978207290-qskr9dip90k5iue6iif10thbhmf30h4j.apps.googleusercontent.com",
+          "client_id": "814817576908-qvmhv8be8h1ch3qlmb5fgbhsobj0kp9k.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBtnrNcmU55_Cjk9fdVpWulrPsXAvtxLqw"
+          "current_key": "AIzaSyBJb0djB_dnFc3UkfY985tTpVe8fYFI7zc"
         }
       ],
       "services": {
