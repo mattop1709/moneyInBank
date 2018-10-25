@@ -4,7 +4,9 @@ import {
   View,
   TextInput,
   TouchableOpacity,
-  ActivityIndicator
+  ActivityIndicator,
+  Image,
+  Platform
 } from "react-native";
 import { styles as s } from "react-native-style-tachyons";
 import { connect } from "react-redux";
@@ -36,14 +38,33 @@ class Login extends Component {
     return (
       <View style={[s.flx_i, s.bg_orange]}>
         <View style={[s.flx_i, , s.jcc]}>
+          <View style={[s.aic, s.mb4]}>
+            <Image
+              style={{ width: 160, height: 120 }}
+              source={require("../../assets/images/logo.png")}
+            />
+          </View>
           <TextInput
-            style={[s.mh5, s.bg_white, s.pl3, s.br5]}
+            style={[
+              s.mh5,
+              s.bg_white,
+              s.pl3,
+              s.br5,
+              Platform.select({ ios: [s.pv2] })
+            ]}
             underlineColorAndroid="transparent"
             onChangeText={id => this.setState({ staffId: id })}
             placeholder="Email address"
           />
           <TextInput
-            style={[s.mh5, s.bg_white, s.pl3, s.br5, s.mt2]}
+            style={[
+              s.mh5,
+              s.bg_white,
+              s.pl3,
+              s.br5,
+              s.mt2,
+              Platform.select({ ios: [s.pv2] })
+            ]}
             underlineColorAndroid="transparent"
             onChangeText={pw => this.setState({ password: pw })}
             placeholder="Password"

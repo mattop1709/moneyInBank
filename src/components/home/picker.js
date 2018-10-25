@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { styles as s } from "react-native-style-tachyons";
 import { Dropdown } from "react-native-material-dropdown";
 
@@ -19,7 +19,7 @@ export function PickerStatus({ onChangeText }) {
   return (
     <View style={[s.ph4, s.br5]}>
       <Dropdown
-        label="Select Result"
+        label="Select Status"
         data={mibResult}
         onChangeText={onChangeText}
       />
@@ -29,36 +29,39 @@ export function PickerStatus({ onChangeText }) {
 
 const zbcArea = [
   {
-    value: "GOMBAK"
+    value: "ALL ZBCs"
   },
   {
-    value: "KERTAG"
+    value: "ZBC SELANGOR TIMUR 1"
   },
   {
-    value: "KEBAT"
+    value: "ZBC SELANGOR TIMUR 2"
   },
   {
-    value: "RAWANG"
+    value: "ZBC SELANGOR UTARA 1"
   },
   {
-    value: "COBRA"
+    value: "ZBC SELANGOR UTARA 2"
   },
   {
-    value: "KLANG"
+    value: "ZBC SELANGOR BARAT 1"
   },
   {
-    value: "SALBAN"
+    value: "ZBC SELANGOR BARAT 2"
+  },
+  {
+    value: "ZBC SELANGOR TENGAH"
   }
 ];
 
 const mibResult = [
   {
-    value: "Servable"
+    value: "Pending Order Creation"
   },
   {
-    value: "Not Found"
+    value: "In Demand List"
   },
   {
-    value: "Port Full"
+    value: "Closed"
   }
 ];

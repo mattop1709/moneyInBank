@@ -24,7 +24,7 @@ const mapDispatchToProps = dispatch => ({
 
 class Home extends Component {
   state = {
-    zbc: null
+    zbc: "ALL ZBCs"
   };
   componentWillMount() {
     this.props.navigation.setParams({
@@ -59,13 +59,13 @@ class Home extends Component {
         )}
         <ActionButton
           style={
-            zbc == null
+            zbc == "ALL ZBCs"
               ? [s.bg_darkGrey, s.pv3, s.mh3, s.mt2, s.aic, s.br5]
-              : [s.bg_peach, s.pv3, s.mh3, s.mt2, s.aic, s.br5]
+              : [s.bg_orange, s.pv3, s.mh3, s.mt2, s.aic, s.br5]
           }
           caption={"SHOW DETAILS"}
           route={() => navigate("DetailsScreen", { zbc })}
-          disabled={zbc == null}
+          disabled={zbc == "ALL ZBCs"}
         />
       </View>
     );

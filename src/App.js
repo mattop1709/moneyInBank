@@ -28,17 +28,22 @@ const App = () => {
 
 NativeTachyons.build(
   {
+    fonts: {
+      iowan: "Iowan Old Style"
+    },
     colors: {
       palette: {
-        orange: "#ffb347",
+        orange: "#ee7202",
         paleOrange: "#ffb347",
+        googleOrange: "#f8931f",
         peach: "#ffcd94",
         white: "#f8f8ff",
         darkGrey: "#c4c4c4",
         lightGrey: "#dcdcdc",
         red: "#ff6b6b",
         black: "#000000",
-        blue: "#779ecb"
+        blue: "#779ecb",
+        green: "#4caf50"
       }
     }
   },

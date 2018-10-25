@@ -5,16 +5,17 @@ import { styles as s } from "react-native-style-tachyons";
 export function Dashboard({ lists, area, date }) {
   var moment = require("moment-timezone");
   return (
-    <View style={[s.pv3, s.jcc, s.bg_paleOrange, s.mh3, s.br2, s.mv2]}>
+    <View style={[s.pv3, s.jcc, s.bg_orange, s.mh3, s.br2, s.mv2]}>
       <Text style={[s.pv2, s.ph4, s.b]}>WAITERS DASHBOARD</Text>
-
       <Row
-        caption={"Pending Order"}
+        caption={"Pending Order Creation"}
         figure={
-          area === null
-            ? lists.filter(list => list.status == "Pending Order").length
+          area === "ALL ZBCs"
+            ? lists.filter(list => list.status == "Pending Order Creation")
+                .length
             : lists.filter(
-                list => list.status == "Pending Order" && list.zbc == area
+                list =>
+                  list.status == "Pending Order Creation" && list.zbc == area
               ).length
         }
         date={moment(date)
@@ -22,12 +23,12 @@ export function Dashboard({ lists, area, date }) {
           .format("LLL")}
       />
       <Row
-        caption={"In Demand"}
+        caption={"In Demand List"}
         figure={
-          area === null
-            ? lists.filter(list => list.status == "In Demand").length
+          area === "ALL ZBCs"
+            ? lists.filter(list => list.status == "In Demand List").length
             : lists.filter(
-                list => list.status == "In Demand" && list.zbc == area
+                list => list.status == "In Demand List" && list.zbc == area
               ).length
         }
         date={moment(date)
@@ -35,13 +36,12 @@ export function Dashboard({ lists, area, date }) {
           .format("LLL")}
       />
       <Row
-        caption={"Completed"}
+        caption={"Closed"}
         figure={
-          area === null
-            ? lists.filter(list => list.status == "Completed").length
-            : lists.filter(
-                list => list.status == "Completed" && list.zbc == area
-              ).length
+          area === "ALL ZBCs"
+            ? lists.filter(list => list.status == "Closed").length
+            : lists.filter(list => list.status == "Closed" && list.zbc == area)
+                .length
         }
         date={moment(date)
           .tz("Asia/Kuala_Lumpur")
@@ -50,7 +50,7 @@ export function Dashboard({ lists, area, date }) {
       <LastRow
         caption={"Total Waiters"}
         figure={
-          area === null
+          area === "ALL ZBCs"
             ? lists.length
             : lists.filter(list => list.zbc == area).length
         }
@@ -65,7 +65,7 @@ export function Dashboard({ lists, area, date }) {
 export function DashboardStatus({ waiters, status, figure, date }) {
   var moment = require("moment-timezone");
   return (
-    <View style={[s.pv3, s.jcc, s.bg_paleOrange, s.mh2, s.br2, s.mt3]}>
+    <View style={[s.pv3, s.jcc, s.bg_orange, s.mh2, s.br2, s.mt3]}>
       <Text style={[s.pv2, s.ph4, s.b]}>DASHBOARD</Text>
       <Row
         caption={status == null ? "All" : status}

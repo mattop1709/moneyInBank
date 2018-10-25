@@ -10,7 +10,7 @@ export const fetchLists = () => {
       .then(function(snapshot) {
         setTimeout(() => {
           var waitersArr = Object.values(snapshot.val());
-          console.log(waitersArr);
+          // console.log(waitersArr);
           dispatch(receiveLists(waitersArr));
           dispatch(receivedLists());
         });
@@ -29,4 +29,8 @@ const receivedLists = () => ({
 
 const startRetrieving = () => ({
   type: "START_RETRIEVE"
+});
+
+export const filterLists = () => ({
+  type: "FILTER_LISTS"
 });

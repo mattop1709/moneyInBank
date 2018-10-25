@@ -7,13 +7,14 @@ import RefreshIcon from "react-native-vector-icons/dist/Ionicons";
 
 import Home from "../components/home/main";
 import Details from "../components/home/details";
+import Detailed from "../components/details/main";
 
 const Stack = createStackNavigator({
   HomeScreen: {
     screen: Home,
     navigationOptions: ({ navigation, onLogout }) => ({
       headerStyle: {
-        backgroundColor: "#ffb347",
+        backgroundColor: "#ee7202",
         elevation: 0
       },
       headerTitle: "Home",
@@ -34,6 +35,17 @@ const Stack = createStackNavigator({
       },
       headerTintColor: "#000",
       headerTitle: "Details"
+    })
+  },
+  DetailedScreen: {
+    screen: Detailed,
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: "#f8f8ff",
+        elevation: 0
+      },
+      headerTintColor: "#000",
+      headerTitle: "Information"
     })
   }
 });

@@ -18,14 +18,14 @@ class Details extends Component {
   state = { status: null };
   filterNumber(status, waiters) {
     if (status !== null) {
-      return waiters.filter(waiter => waiter.result == status).length;
+      return waiters.filter(waiter => waiter.status == status).length;
     } else {
       return waiters.length;
     }
   }
   filterLists(status, waiters) {
     if (status !== null) {
-      return waiters.filter(waiter => waiter.result == status);
+      return waiters.filter(waiter => waiter.status == status);
     } else {
       return waiters;
     }
@@ -38,6 +38,7 @@ class Details extends Component {
   render() {
     const { status } = this.state;
     const { waiters, navigation, date } = this.props;
+    const { navigate } = navigation;
     const zbcHeader = navigation.getParam("zbc");
     return (
       <ScrollView style={[s.bg_white]}>
@@ -68,6 +69,7 @@ class Details extends Component {
               processor={item.processor}
               customer={item.customer}
               result={item.result}
+              navigate={navigate}
             />
           )}
         />

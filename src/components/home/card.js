@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
 import { styles as s } from "react-native-style-tachyons";
 import Icon from "react-native-vector-icons/dist/EvilIcons";
 
@@ -9,26 +9,37 @@ export const Card = ({
   reference,
   processor,
   customer,
-  result
+  result,
+  navigate
 }) => {
   return (
-    <View
-      style={[s.flx_row, s.ba, s.b__peach, s.ph3, s.mh3, s.mb2, s.pv3, s.br2]}
-    >
-      <View style={[s.jcc]}>
+    <View style={[s.ba, s.b__peach, s.ph3, s.mh3, s.mb2, s.pv3, s.br2]}>
+      <View style={[s.flx_row]}>
+        <Text
+          style={
+            result == "Installed" ? [s.green, s.f5, s.b] : [s.red, s.f5, s.b]
+          }
+        >
+          {result}
+        </Text>
         <Icon
-          name={result === "Servable" ? "check" : "exclamation"}
+          name={result == "Installed" ? "check" : "exclamation"}
           size={24}
-          color={result === "Servable" ? "green" : "red"}
+          color={result == "Installed" ? "#4caf50" : "#ff6b6b"}
         />
       </View>
-      <View style={[s.flx_i, s.ph2]}>
-        <Text style={[s.blue, s.f5]}>{reference}</Text>
-        <Text style={[s.blue, s.f5]}>{customer}</Text>
-        <View style={[s.flx_row, s.jcsb, s.pt2]}>
-          <Text>by {processor}</Text>
-          <Text>{status}</Text>
-        </View>
+      <Text style={[s.orange, s.f5, s.pb2, s.b]}>{customer}</Text>
+      <View style={[s.flx_row]}>
+        <Icon name="pencil" size={24} color="#c4c4c4" />
+        <Text>{processor}</Text>
+      </View>
+      <View style={[s.flx_row]}>
+        <Icon name="tag" size={24} color="#c4c4c4" />
+        <Text>{reference}</Text>
+      </View>
+      <View style={[s.flx_row]}>
+        <Icon name="star" size={24} color="#c4c4c4" />
+        <Text>{status}</Text>
       </View>
     </View>
   );
