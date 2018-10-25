@@ -29,7 +29,7 @@ const App = () => {
 NativeTachyons.build(
   {
     fonts: {
-      iowan: "Iowan Old Style"
+      Lato: "Lato"
     },
     colors: {
       palette: {

@@ -44,7 +44,7 @@ class Details extends Component {
       <ScrollView style={[s.bg_white]}>
         <View style={[s.pv3, s.mh2, s.mt2, s.br2, s.b1]}>
           <View style={[s.aic]}>
-            <Text style={[s.orange, s.b]}>{zbcHeader}</Text>
+            <Text style={[s.orange, s.ff_Lato]}>{zbcHeader}</Text>
           </View>
 
           <DashboardStatus
@@ -57,7 +57,9 @@ class Details extends Component {
             onChangeText={result => this.setState({ status: result })}
           />
         </View>
-        <Text style={[s.darkGrey, s.ph4, s.pb3]}>LIST OF CUSTOMERS</Text>
+        <Text style={[s.darkGrey, s.ph4, s.pb3, s.ff_Lato]}>
+          LIST OF CUSTOMERS
+        </Text>
         <FlatList
           data={this.filterLists(status, waiters)}
           keyExtractor={(item, index) => item.reference}

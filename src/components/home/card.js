@@ -17,7 +17,9 @@ export const Card = ({
       <View style={[s.flx_row]}>
         <Text
           style={
-            result == "Installed" ? [s.green, s.f5, s.b] : [s.red, s.f5, s.b]
+            result == "Installed"
+              ? [s.green, s.f5, s.b, s.ff_Lato]
+              : [s.red, s.f5, s.b, s.ff_Lato]
           }
         >
           {result}
@@ -28,18 +30,18 @@ export const Card = ({
           color={result == "Installed" ? "#4caf50" : "#ff6b6b"}
         />
       </View>
-      <Text style={[s.orange, s.f5, s.pb2, s.b]}>{customer}</Text>
+      <Text style={[s.orange, s.f5, s.pb2, s.b, s.ff_Lato]}>{customer}</Text>
       <View style={[s.flx_row]}>
         <Icon name="pencil" size={24} color="#c4c4c4" />
-        <Text>{processor}</Text>
+        <Text style={[s.ff_Lato]}>{processor}</Text>
       </View>
       <View style={[s.flx_row]}>
         <Icon name="tag" size={24} color="#c4c4c4" />
-        <Text>{reference}</Text>
+        <Text style={[s.ff_Lato]}>{reference}</Text>
       </View>
       <View style={[s.flx_row]}>
         <Icon name="star" size={24} color="#c4c4c4" />
-        <Text>{status}</Text>
+        <Text style={[s.ff_Lato]}>{status}</Text>
       </View>
     </View>
   );

@@ -48,7 +48,7 @@ class Home extends Component {
     return (
       <View style={[s.bg_white, s.flx_i, s.jcc]}>
         <View style={[s.aic]}>
-          <Text style={[s.b, s.orange]}>MONEY IN BANK</Text>
+          <Text style={[s.b, s.orange, s.ff_Lato]}>MONEY IN BANK</Text>
         </View>
         <PickerArea onChangeText={area => this.setState({ zbc: area })} />
 

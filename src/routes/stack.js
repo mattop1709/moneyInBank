@@ -18,6 +18,9 @@ const Stack = createStackNavigator({
         elevation: 0
       },
       headerTitle: "Home",
+      headerTitleStyle: {
+        fontFamily: "Lato"
+      },
       headerRight: (
         <HeaderButton
           refreshButton={navigation.getParam("test1")}

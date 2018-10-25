@@ -6,7 +6,7 @@ export function Dashboard({ lists, area, date }) {
   var moment = require("moment-timezone");
   return (
     <View style={[s.pv3, s.jcc, s.bg_orange, s.mh3, s.br2, s.mv2]}>
-      <Text style={[s.pv2, s.ph4, s.b]}>WAITERS DASHBOARD</Text>
+      <Text style={[s.pv2, s.ph4, s.ff_Lato]}>WAITERS DASHBOARD</Text>
       <Row
         caption={"Pending Order Creation"}
         figure={
@@ -66,7 +66,7 @@ export function DashboardStatus({ waiters, status, figure, date }) {
   var moment = require("moment-timezone");
   return (
     <View style={[s.pv3, s.jcc, s.bg_orange, s.mh2, s.br2, s.mt3]}>
-      <Text style={[s.pv2, s.ph4, s.b]}>DASHBOARD</Text>
+      <Text style={[s.pv2, s.ph4, s.b, s.ff_Lato]}>DASHBOARD</Text>
       <Row
         caption={status == null ? "All" : status}
         figure={figure}
@@ -89,11 +89,11 @@ export const Row = ({ caption, figure, date }) => {
   return (
     <View style={[s.pv2, s.ph4, s.flx_row, s.jcsb]}>
       <View>
-        <Text style={[s.f5]}>{caption}</Text>
-        <Text style={[s.white]}>{date}</Text>
+        <Text style={[s.f5, s.ff_Lato]}>{caption}</Text>
+        <Text style={[s.white, s.ff_Lato]}>{date}</Text>
       </View>
       <View style={[s.jcc]}>
-        <Text style={[s.f5]}>{figure}</Text>
+        <Text style={[s.f5, s.ff_Lato]}>{figure}</Text>
       </View>
     </View>
   );
@@ -105,11 +105,11 @@ export const LastRow = ({ caption, figure, date }) => {
       style={[s.pt2, s.pb2, s.flx_row, s.jcsb, s.bt, s.mh4, s.b__lightGrey]}
     >
       <View>
-        <Text style={[s.f4]}>{caption}</Text>
-        <Text style={[s.white]}>{date}</Text>
+        <Text style={[s.f4, s.ff_Lato]}>{caption}</Text>
+        <Text style={[s.white, s.ff_Lato]}>{date}</Text>
       </View>
       <View style={[s.jcc]}>
-        <Text style={[s.f4]}>{figure}</Text>
+        <Text style={[s.f4, s.ff_Lato]}>{figure}</Text>
       </View>
     </View>
   );

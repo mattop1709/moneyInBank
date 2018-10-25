@@ -28,10 +28,10 @@ class Login extends Component {
     password: ""
   };
 
-  validateButton() {
+  validateButton = () => {
     const { staffId, password } = this.state;
     return staffId.length > 0 && password.length > 0;
-  }
+  };
   render() {
     const { user, onLogin, isLoading } = this.props;
     const { staffId, password } = this.state;
@@ -44,6 +44,7 @@ class Login extends Component {
               source={require("../../assets/images/logo.png")}
             />
           </View>
+
           <TextInput
             style={[
               s.mh5,
